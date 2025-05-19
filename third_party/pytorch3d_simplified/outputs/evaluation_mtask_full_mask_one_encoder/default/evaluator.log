@@ -1,0 +1,41 @@
+[2025-05-19 04:46:55,006][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 04:53:08,391][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 04:59:13,013][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:00:46,001][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:01:02,390][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:01:22,801][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:01:37,140][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:01:37,715][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:02:14,502][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:02:29,379][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:02:29,777][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:04:12,373][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:04:27,821][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:04:28,229][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:06:55,901][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:07:10,555][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:07:10,956][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:08:10,761][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:08:27,516][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:08:27,923][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:11:04,138][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:11:20,762][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:11:21,162][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:11:46,030][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:12:02,241][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:12:02,651][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:12:51,269][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:13:07,828][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:13:08,227][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:18:50,952][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:19:05,933][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:19:06,338][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:19:29,994][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:19:49,701][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:19:50,099][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:21:23,987][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:21:39,999][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:21:56,716][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08
+[2025-05-19 05:22:15,104][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:22:15,529][root][INFO] - Loaded checkpoint sucessfully
+[2025-05-19 05:22:42,646][diffusion_policy.model.diffusion.conditional_unet1d][INFO] - number of parameters: 3.069242e+08

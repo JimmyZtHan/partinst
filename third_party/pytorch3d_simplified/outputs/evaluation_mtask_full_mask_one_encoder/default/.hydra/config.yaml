@@ -1,0 +1,207 @@
+_target_: lgm_bc.evaluation.dp_evaluator.DPEvaluator
+name: evaluation
+rollout_mode: specific_ckpt
+shape_meta: ${env.shape_meta}
+task_name: mtask_full_mask_one_encoder
+run_name: default
+data_root: ${env.data_root}
+meta_path: ${env.meta_path}
+job_id: 1111
+obj_classes: null
+task_type: null
+split: null
+output_dir: /home/jimmyhan/Desktop/lgplm/PartInstruct/baselines/TEST_output
+starting_epoch: 0
+seq_length: 16
+horizon: 16
+n_obs_steps: 2
+n_action_steps: 8
+obs_as_global_cond: true
+num_iterations: 10
+ckpt_path: /home/jimmyhan/Desktop/lgplm/PartInstruct/ckpt/dp-new-augumented_data_mask-09-24_09-41-16/latest.ckpt
+epoch: 0
+max_epoch: null
+optimizer:
+  _target_: torch.optim.AdamW
+  lr: 0.0001
+  betas:
+  - 0.95
+  - 0.999
+  eps: 1.0e-08
+  weight_decay: 1.0e-06
+scheduler:
+  _target_: null
+  parameters: null
+lang_encoder:
+  _target_: PartInstruct.baselines.utils.encoders.T5Encoder
+  pretrained_model_name_or_path: t5-small
+training:
+  use_ema: true
+  checkpoint_every: 50
+  num_epochs: 3000
+task:
+  name: ${task_name}
+  env_runner:
+    _target_: PartInstruct.baselines.evaluation.env_runner.dp_env_runner.DPEnvRunner
+    lang_encoder:
+      _target_: PartInstruct.baselines.utils.encoders.T5Encoder
+      pretrained_model_name_or_path: t5-small
+    bullet_env: PartInstruct.PartGym.env.bullet_env_sam
+    fps: 20
+    start_seed: 100000
+    max_steps: 250
+    n_action_steps: ${n_action_steps}
+    n_obs_steps: ${n_obs_steps}
+    n_envs: 1
+    n_vis: 1
+    env_config: /home/jimmyhan/Desktop/lgplm/PartInstruct/Final_release/PartInstruct/PartInstruct/baselines/evaluation/config/env/${env.config_name}.yaml
+    gui: false
+    past_action: false
+policy:
+  _target_: PartInstruct.baselines.policy.diffusion_policy.RobodiffUnetImagePolicy
+  shape_meta: ${shape_meta}
+  noise_scheduler:
+    _target_: diffusers.schedulers.scheduling_ddpm.DDPMScheduler
+    num_train_timesteps: 100
+    beta_start: 0.0001
+    beta_end: 0.02
+    beta_schedule: squaredcos_cap_v2
+    variance_type: fixed_small
+    clip_sample: true
+    prediction_type: epsilon
+  obs_encoder:
+    _target_: PartInstruct.baselines.utils.encoders.VisLangObsImageEncoder
+    shape_meta: ${shape_meta}
+    image_encoder:
+      _target_: PartInstruct.baselines.utils.encoders.get_resnet
+      name: resnet18
+      weights: null
+      input_channels: 4
+    lang_encoder: ${lang_encoder}
+    resize_shape: null
+    crop_shape:
+    - 76
+    - 76
+    random_crop: true
+    use_group_norm: true
+    share_image_encoder: false
+    imagenet_norm: true
+  horizon: ${horizon}
+  n_action_steps: ${eval:'${n_action_steps}'}
+  n_obs_steps: ${n_obs_steps}
+  num_inference_steps: 100
+  obs_as_global_cond: ${obs_as_global_cond}
+  diffusion_step_embed_dim: 128
+  down_dims:
+  - 512
+  - 1024
+  - 2048
+  kernel_size: 5
+  n_groups: 8
+  cond_predict_scale: true
+logging:
+  project: dp
+  resume: false
+  mode: offline
+  name: ${name}_${task_name}_${run_name}_${now:%Y.%m.%d-%H.%M.%S}
+  tags:
+  - ${name}
+  - ${task_name}
+  - ${run_name}
+  id: null
+  group: null
+pretrained_model_path: ''
+wandb_project: lgm-robodiff_unet_image
+folder: ./
+hdf5_cache_mode: low_dim
+experiment_log: null
+debug: false
+env:
+  config_name: dp_env_config_mask
+  robot_base_position:
+  - 0.6
+  - 0.0
+  - 0.05
+  up_axis_index: 2
+  render_width: 300
+  render_height: 300
+  cam_static_intrinsics:
+    fx: 259.80761647
+    fy: 259.80761647
+    cx: 150.0
+    cy: 150.0
+  cam_static_dist: 0.8
+  cam_static_yaw: -90
+  cam_static_pitch: -20
+  cam_static_target:
+  - -0.25
+  - 0.05
+  - 0.5
+  cam_wrist_intrinsics:
+    fx: 300.0
+    fy: 300.0
+    cx: 150.0
+    cy: 150.0
+  cam_near: 0.001
+  cam_far: 10.0
+  translate_distance: 0.12
+  grasp_bbox_ext_ratio: 8.0
+  touch_bbox_ext_ratio: 1.2
+  translate_target_dis_thred: 0.15
+  translate_dir_norm_dis_thred: 0.1
+  rotate_target_dis_thred: 0.5
+  release_distance_tcp_z: -0.05
+  release_distance_world_z: 0.15
+  release_target_dis_thred: 0.125
+  release_target_rot_thred: 0.1
+  device: cuda:0
+  data_root: /home/jimmyhan/Desktop/lgplm/PartInstruct/simulation
+  meta_path: generated_episodes_test.json
+  scene_path: urdfs/scenes/stage_v3_sc0_staging.urdf
+  scene_config_path: null
+  objects_directory: null
+  urdf_robot: urdfs/robots/franka_panda/panda.urdf
+  urdf_table: urdfs/wood/wood.urdf
+  urdf_floor: urdfs/floor/floor.urdf
+  partnet_path: partnet-grasping
+  shape_meta:
+    obs:
+      agentview_rgb:
+        shape:
+        - 3
+        - 300
+        - 300
+        type: rgb
+      agentview_part_mask:
+        shape:
+        - 1
+        - 300
+        - 300
+        type: mask
+      gripper_state:
+        shape:
+        - 1
+        type: low_dim
+      joint_states:
+        shape:
+        - 7
+        type: low_dim
+      instructions:
+        shape:
+        - 512
+        type: text
+    action:
+      shape:
+      - 7
+  obj_class: eyeglasses
+  obj_id: '101284'
+  obj_position:
+  - -0.05
+  - -0.031480762319536344
+  - 0.15
+  skill_chain: touch
+  chain_params:
+  - task_name: grasp
+    params:
+      part_grasp: top
+      region_on_part: right

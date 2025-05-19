@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: partinstruct
+Version: 0.1.0
+Summary: PartInstruct: A Part-level Instruction Following benchmark for Fine-grained Robot Manipulation
+Author: Yifan Yin; Zhengtao Han
+Author-email: yyin34@jhu.edu; zhan47@jhu.edu
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+License-File: LICENSE

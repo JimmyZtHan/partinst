@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+PartInstruct/__init__.py
+PartInstruct/PartGym/__init__.py
+PartInstruct/baselines/__init__.py
+PartInstruct/baselines/policy/__init__.py
+PartInstruct/baselines/policy/base_policy.py
+PartInstruct/baselines/policy/diffusion_policy.py
+PartInstruct/baselines/training/__init__.py
+PartInstruct/baselines/training/base_workspace.py
+PartInstruct/baselines/training/train_dp_mask_one_encoder.py
+partinstruct.egg-info/PKG-INFO
+partinstruct.egg-info/SOURCES.txt
+partinstruct.egg-info/dependency_links.txt
+partinstruct.egg-info/top_level.txt

@@ -12,7 +12,5 @@ archive/
 frames/
 *h100.yml
 *.npy
-partgym.egg-info
 output/
-
 *.egg-info
